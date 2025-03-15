@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <style>
+        .question{
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+            border-bottom: 2px solid black;
+        }
+        .question > p{
+            margin: 0.3rem;
+            font-size: large;
+            font-weight: 500;
+        }
+        .disabled{
+           
+            pointer-events: none;
+        }
+        .AnswerBox{
+            display: flex;
+            flex-direction: column;
+            padding: 0.7rem;
+        }
+        .Answers{
+            padding: 0.5rem;
+            margin: 0.3rem;
+            font-size: large;
+            border: 2px solid black;
+            border-radius: 8px;
+            text-align: start;
+            cursor: pointer;
+        
+        }
+        .Answers:hover{
+            background-color: rgb(203, 199, 199);
+            box-shadow: 2px 4px 1px gray;
+        }
+        .Answers:active{
+            background-color: blue;
+        }
+        .category-option{
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-200 h-screen relative">
+    <nav class="bg-blue-300 p-5">
+        <div class="font-bold text-2xl px-4 justify-self-center">
+            MyQuiz
+        </div>
+    </nav>
+
+    <div class="flex justify-between p-4 text-2xl border-b-2">
+        <select id="category" class="border-gray-400 border-2 rounded-md p-1 font-semibold" >
+            <option value="category" class="category-option">category</option>
+        </select>
+
+        <div id="score" class="mr-2 font-bold ">Score : <span id="result">0</span></div>
+    </div>
+    
+    <div id="Main-section" class="justify-self-center border-t-0 border-2 p-5 min-h-screen md:w-1/3 w-2/3 ">
+
+    </div >
+    <div class="justify-self-center m-2 w-1/2  flex justify-around">
+        <button id="Restart" class="bg-blue-500 px-3 py-2 rounded-md font-bold text-white text-lg  " >Restart Quiz</button>
+        <button id="Submit" class="bg-blue-500 px-3 py-2 rounded-md font-bold text-white text-lg  " >Submit</button>
+    </div>
+    
+    <div id="resultBox" class="absolute top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 bg-green-300 text-black text-lg font-bold p-6 rounded-lg min-h-40 text-center hidden">
+      <span id="backBtn" class="font-bold text-lg float-end rounded-2xl shadow-2xl shadow-orange-100 cursor-pointer">X</span>
+      <p id="ResultMsg"></p>
+    </div>
+
+<!-- Footer section -->
+    <footer class="bg-gray-800 text-gray-50 mt-5 flex justify-around p-5">
+       <div>
+        &copy;
+        <address>Khajni Gorakhpur</address>
+        <p>abcd@1234gmai.com</p>
+        <p>9876543210</p>
+       </div>
+       <div>
+        &copy;
+        <address>Khajni Gorakhpur</address>
+        <p>abcd@1234gmai.com</p>
+        <p>9876543210</p>
+       </div>
+    </footer>
+
+</body>
+<script src="./Quizapp.js"></script>
+</html>
+
+<!-- npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch -->
